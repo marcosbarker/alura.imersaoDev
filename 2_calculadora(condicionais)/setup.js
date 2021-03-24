@@ -24,9 +24,19 @@ if (operacao == 1){
         var resultado = primeiroValor - segundoValor
         document.write("<h2>" + primeiroValor + " - " + segundoValor + " = " + resultado + "</h2>")
     
-  }
+    }else{
+
+        document.write("<h2>Opção inválida</h2>")
+ }
+ 
+ 
+
 
 /*
+document.write() = ecreve na tela
+concatenação (juntar palavra com variaveis) - ("palavra" + variavel)
+== - comparação
+= - atribuição
 if = se
 else = senão
 else if = senão se
