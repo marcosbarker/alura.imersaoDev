@@ -1,10 +1,19 @@
-var listaFilmes = ["https://m.media-amazon.com/images/M/MV5BN2VlN2VhZWUtNjJlYi00NjI1LTk5NGQtZTE0YzA2YjZiN2NlXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX182_CR0,0,182,268_AL_.jpg",
-                   "https://m.media-amazon.com/images/M/MV5BMWYwMWQxMmUtNjU3MS00NjIwLTllYWMtNzcxYzRkMWYyYTkwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-                   "https://m.media-amazon.com/images/M/MV5BODEyOWY2ZDctOGI3Zi00YjYwLWIwZDEtMzJlY2VhYTA2N2ViXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX182_CR0,0,182,268_AL_.jpg"]
+function adicionarFilme(){
+    var campoFilmeFavorito = document.querySelector('#filme') //'#' puxa 'ID' do html
+    var filmeFavorito = campoFilmeFavorito.value 
+    if(filmeFavorito.endsWith('.jpg')){  //endswith (termina com? retorna true ou false)
+        listarFilmesNaTela(filmeFavorito)
+ 
+    }else{
 
-for(var i = 0; i < listaFilmes.length; i++){
-    document.write("<img src=" + listaFilmes[i] + ">")
+        alert("Imagem inválida")
+    }
+
+    campoFilmeFavorito.value = "" //limpa o que foi escrito, ficando o 'placeholder' do html
 }
 
-
-
+function listarFilmesNaTela(filme){
+    var listaFilmes = document.querySelector('#listaFilmes') //'#' puxa 'ID' do html
+    var elementosFilme = "<img src=" + filme + ">"
+    listaFilmes.innerHTLM = listaFilmes.innerHTML + elementosFilme 
+}
