@@ -5,6 +5,7 @@ var joao = {
     derrotas: 1,
     pontos: 0
 }
+
 var maria = {
     nome: "Maria",
     vitorias: 3,
@@ -28,7 +29,7 @@ exibirJogadoresNaTela(jogadores)
 function exibirJogadoresNaTela(jogadores){
     var html = ""
 
-    for(var i = 0; i < jogadores.length; i++){
+    for(var i = 0; i < jogador.length; i++){
         html += "<tr><td>" + jogadores[i].nome + "</td>"
         html += "<td>" + jogadores[i].vitorias + "</td>"
         html += "<td>" + jogadores[i].empates + "</td>"
