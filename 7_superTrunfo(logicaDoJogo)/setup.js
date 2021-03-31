@@ -1,6 +1,6 @@
 var cartaMarcos = {
+    nome: "yusuke",
     atributos: {
-        nome: "yusuke",
         ataque: 80,
         defesa: 50,
         magia: 90
@@ -8,8 +8,8 @@ var cartaMarcos = {
 }
 
 var cartaJoaquim = {
+    nome: "ladyBug",
     atributos: {
-        nome: "ladyBug",
         ataque: 90,
         defesa: 90,
         magia: 70
@@ -17,8 +17,8 @@ var cartaJoaquim = {
 }
 
 var cartaAnaCarolina = {
+    nome: "princesaJujuba",
     atributos: {
-        nome: "princesaJujuba",
         ataque: 50,
         defesa: 90,
         magia: 100
@@ -36,12 +36,15 @@ var cartaAnaCarolina = {
 
      var numeroCartaJogador = parseInt(Math.random() * 3)
      while (numeroCartaJogador == numeroCartaMaquina){
-         numeroCartajogador = parseInt(Math.random() * 3)
+         numeroCartaJogador = parseInt(Math.random() * 3)
      }
 
      cartaJogador = cartas[numeroCartaJogador]
+     console.log(cartaJogador)
+
      document.getElementById('btnSortear').disabled = true
      document.getElementById('btnJogar').disabled = false
+     exibirOpcoes()
  }
 
 function exibirOpcoes(){
@@ -52,4 +55,28 @@ function exibirOpcoes(){
     }
 
     opcoes.innerHTML = opcoesTexto
+}
+
+function obterAtributoSelecionado(){
+    var radioAtributo = document.getElementsByName('atributo')
+    for(var i = 0; i < radioAtributo.length; i++){
+        if(radioAtributo[i].checked){
+            return radioAtributo[i].value
+        }
+    }
+}
+
+function jogar(){
+    var atributoSelecionado = obterAtributoSelecionado()
+    if(cartaJogador.atributos[atributoSelecionado] > cartaMaquina.atributos['atributoSelecionado']){
+        alert('Venceu a carta máquina')
+    
+    }else if(cartaJogador.atributos[atributoSelecionado] < cartaMaquina.atributos[atributoSelecionado]){
+        alert('Perdeu. Carta da máquina ganhou')
+  
+    }else{
+        alert('Empatou')
+    }
+
+    console.log(cartaMaquina)
 }
