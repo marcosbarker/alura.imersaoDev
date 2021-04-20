@@ -49,6 +49,9 @@ div ol{
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
   color: #FFFFFF;
+  text-decoration: none;
+	color: white;
+
 }
 
 img{
@@ -61,3 +64,9 @@ img{
   border: 8px solid #3C86F9;
   transform: translateY(-35%);
 }
+
+a:link, a:visited {
+  text-decoration: none;
+	color: white;
+}
+
